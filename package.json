@@ -1,0 +1,24 @@
+{
+  "name": "media-streaming-server",
+  "version": "1.0.0",
+  "description": "Media Streaming Server based on nodeJS",
+  "main": "src/NodeMediaServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://gitolite@hmtintern.de/ccm/media-streaming-server.git"
+  },
+  "keywords": [
+    "streaming",
+    "media",
+    "videostream",
+    "server"
+  ],
+  "author": "Michael Falk",
+  "license": "ISC",
+  "dependencies": {
+    "node-media-server": "^2.1.4"
+  }
+}
