@@ -13,6 +13,14 @@
 //
 // Use https://www.hlstester.com/ as a streaming client for testing purpose.
 
+const os = require('os')
+const isWindows = os.platform() === "win32";
+
+let ffmpeg_path = 'C:\\Program Files\\ffmpeg-4.0\\bin\\ffmpeg.exe';
+if (!isWindows) {
+    ffmpeg_path = '/usr/bin/ffmpeg'
+}
+
 const NodeMediaServer = require('node-media-server');
 
 const config = {
@@ -29,7 +37,7 @@ const config = {
         allow_origin: '*'
     },
     trans: {
-        ffmpeg: 'C:\\Program Files\\ffmpeg-4.0\\bin\\ffmpeg.exe',
+        ffmpeg: ffmpeg_path,
         tasks: [
             {
                 app: 'live',
@@ -50,3 +58,10 @@ const config = {
 
 var mediaserver = new NodeMediaServer(config);
 mediaserver.run();
+
+// only for cocomo
+// RTMP - rtmp://localhost/live/cocomo
+// http-flv - http://localhost:8000/live/cocomo.flv
+// websocket-flv - ws://localhost:8000/live/cocomo.flv
+// HLS - http://localhost:8000/live/cocomo/index.m3u8
+// DASH - http://localhost:8000/live/cocomo/index.mpd

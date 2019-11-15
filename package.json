@@ -19,6 +19,7 @@
   "author": "Michael Falk",
   "license": "ISC",
   "dependencies": {
-    "node-media-server": "^2.1.4"
+    "node-media-server": "^2.1.4",
+    "os": "^0.1.1"
   }
 }
