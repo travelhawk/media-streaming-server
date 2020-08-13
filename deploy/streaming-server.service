@@ -3,7 +3,7 @@ Description=Cocomo Media Streaming Server
 
 [Service]
 Type=simple
-ExecStart=npm start /home/htects/cocomo/media-streaming-server
+ExecStart=/usr/bin/node /home/cocomo/repos/media-streaming-server
 User=cocomo
 Group=cocomo
 
