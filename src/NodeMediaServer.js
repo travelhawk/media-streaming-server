@@ -16,16 +16,16 @@
 const os = require('os')
 const isWindows = os.platform() === "win32";
 
-let ffmpeg_path = 'C:\\Program Files\\ffmpeg-4.0\\bin\\ffmpeg.exe';
+let ffmpeg_path = process.env.FFMPEG_PATH || 'C:\\Program Files\\ffmpeg-4.0\\bin\\ffmpeg.exe';
 if (!isWindows) {
-    ffmpeg_path = '/usr/bin/ffmpeg'
+    ffmpeg_path = process.env.FFMPEG_PATH || '/usr/bin/ffmpeg'
 }
 
 const NodeMediaServer = require('node-media-server');
 
 const config = {
     rtmp: {
-        port: 2935,
+        port: 1935,
         chunk_size: 60000,
         gop_cache: true,
         ping: 30,
@@ -45,8 +45,8 @@ const config = {
                 vcParam: [],
                 ac: "aac",
                 acParam: ['-ab', '64k', '-ac', '1', '-ar', '44100'],
-                rtmp:true,
-                rtmpApp:'live-low',
+                //rtmp:true,
+                //rtmpApp:'live-low',
                 hls: true,
                 hlsFlags: '[hls_time=2:hls_list_size=3:hls_flags=delete_segments]',
                 dash: true,
