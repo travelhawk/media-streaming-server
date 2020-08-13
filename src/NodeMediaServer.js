@@ -18,7 +18,7 @@ const isWindows = os.platform() === "win32";
 
 let ffmpeg_path = 'C:\\Program Files\\ffmpeg-4.0\\bin\\ffmpeg.exe';
 if (!isWindows) {
-    ffmpeg_path = '/usr/bin/ffmpeg'
+    ffmpeg_path = '/usr/bin/ffmpeg-4.3/ffmpeg'
 }
 
 const NodeMediaServer = require('node-media-server');
