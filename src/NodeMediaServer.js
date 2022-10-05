@@ -2,7 +2,7 @@
 // https://www.npmjs.com/package/node-media-server
 //
 // Use OBS or ffmpeg to publish the live stream
-// ffmpeg example: ffmpeg -f dshow -framerate 30 -video_size 800x600 -rtbufsize 702000k -i video="MiraBox Video Capture" -vcodec libx264 -preset ultrafast -tune zerolatency -b:v 600k -f flv "rtmp://localhost/live/cocomo"
+// ffmpeg example: ffmpeg -f dshow -framerate 30 -video_size 800x600 -rtbufsize 702000k -i video="MiraBox Video Capture" -vcodec libx264 -preset ultrafast -tune zerolatency -b:v 600k -f flv "rtmp://localhost/live/STREAM_NAME"
 //
 // Accessing the live stream
 // RTMP - rtmp://localhost/live/STREAM_NAME
@@ -58,10 +58,3 @@ const config = {
 
 var mediaserver = new NodeMediaServer(config);
 mediaserver.run();
-
-// only for cocomo
-// RTMP - rtmp://localhost/live/cocomo
-// http-flv - http://localhost:8000/live/cocomo.flv
-// websocket-flv - ws://localhost:8000/live/cocomo.flv
-// HLS - http://localhost:8000/live/cocomo/index.m3u8
-// DASH - http://localhost:8000/live/cocomo/index.mpd
